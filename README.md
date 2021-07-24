@@ -33,3 +33,8 @@ una vez ejecutado podra ir al url  http://127.0.0.1:8000/      y obtendra la res
 
 al hacer la solicitud de tipo GET en este endpoint , en su directorio local se generara un archivo data.json que tendra la informacion vista desde el navegador
 pero en un archivo JSON
+
+si desea tambien puede realizar la solicitud GET desde la linea de comandos 
+> curl http://127.0.0.1:8000/
+
+
