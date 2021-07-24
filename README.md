@@ -31,4 +31,5 @@ una vez instaladas las dependencias correr el script main.py
 una vez ejecutado podra ir al url  http://127.0.0.1:8000/      y obtendra la respuesta en formato JSON de acuerdo a las especificaciones
 
 
-
+al hacer la solicitud de tipo GET en este endpoint , en su directorio local se generara un archivo data.json que tendra la informacion vista desde el navegador
+pero en un archivo JSON
