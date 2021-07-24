@@ -12,21 +12,21 @@ la extraccion  y clasifcacion de datos asociados a paises , de acuerdo a esto pa
 
 clonar el proyecto en su repositorio local y desplazarse hasta ese directorio , posteriormente crear un entorno virtual para instalar las dependencias 
 
-python3 -m venv venv
+> python3 -m venv venv
 
 luego debera activar el entorno virtual anteriormente creado
 
-. venv/bin/activate  o bien usando el comando   source venv/bin/activate
+> . venv/bin/activate  o bien usando el comando   source venv/bin/activate
 
 
 una vez activado el entorno virtual debera instalar las dependencias por lo que en la raiz del proyecto ejecutar el siguiente comando
 
-pip install -r requirements.txt o bien  el comando   pip3 install -r requirements.txt
+> pip install -r requirements.txt o bien  el comando   pip3 install -r requirements.txt
 
 
 una vez instaladas las dependencias correr el script main.py  
 
-python main.py   o bien el comando python3.py
+> python main.py   o bien el comando python3.py
 
 una vez ejecutado podra ir al url  http://127.0.0.1:8000/      y obtendra la respuesta en formato JSON de acuerdo a las especificaciones
 
