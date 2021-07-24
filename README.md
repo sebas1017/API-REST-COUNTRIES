@@ -1,5 +1,5 @@
 # Challenge-Python-L1
-servidor http simple sin framework que consume API REST externo (Python3)
+
 
 Servidor HTTP simple sin uso de frameworks(flask ,django, etc)
 
