@@ -8,7 +8,7 @@ la extraccion  y clasifcacion de datos asociados a paises , de acuerdo a esto pa
 
 
 
-# INSTALACION
+# INSTALACION LINUX
 
 clonar el proyecto en su repositorio local y desplazarse hasta ese directorio , posteriormente crear un entorno virtual para instalar las dependencias 
 
