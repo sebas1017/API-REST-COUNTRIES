@@ -41,4 +41,5 @@ si desea tambien puede realizar la solicitud GET desde la linea de comandos
 ![alt text](https://github.com/sebas1017/Challenge-Python-L1/blob/main/APIREST.PNG?raw=true)   ![alt text](https://github.com/sebas1017/Challenge-Python-L1/blob/main/DATABASE.png?raw=true)
 
 
-
+# DISEÑO DE LA SOLUCION 
+![alt text](https://github.com/sebas1017/Challenge-Python-L1/blob/main/PROCESS%20DIAGRAM%20API.png?raw=true)
