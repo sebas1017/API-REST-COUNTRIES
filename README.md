@@ -57,3 +57,4 @@ luego de la solicitud GET desde el servidor HTTP hacia la API REST externa esta 
 
 luego de esto al punto inicial desde el que hicimos el llamado a nuestro servidor HTTP es decir desde nuestro navegador es devuelto en formato JSON los resultados del procesamiento de datos
 se utilizo pandas para la manipulacion de las estadisticas generando un dataframe
+Tambien adjunto en el presente repositorio el archivo del diagrama del diseño de la solucion generado desde draw.io
