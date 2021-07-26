@@ -9,7 +9,9 @@ la extraccion  y clasifcacion de datos asociados a paises , de acuerdo a esto pa
 
 
 # INSTALACION [LINUX]
-
+requisitos:
+1: tener instalado python 3
+2: tener instalada la libreria para creacion de entornos virtuales en python3 en caso de no tenerla ejecutar sudo apt-get install python3-venv
 clonar el proyecto en su repositorio local y desplazarse hasta ese directorio , posteriormente crear un entorno virtual para instalar las dependencias 
 
 > python3 -m venv venv
