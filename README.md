@@ -43,6 +43,8 @@ si desea tambien puede realizar la solicitud GET desde la linea de comandos
 
 # DISEÑO DE LA SOLUCION 
 ![alt text](https://github.com/sebas1017/Challenge-Python-L1/blob/main/PROCESS%20DIAGRAM%20API.png?raw=true)
+
+
 La solucion planteada la defini desde un servidor HTTP simple en python3 creando este , tenemos un endopoint que se encuentra en la raiz de la direccion local , puerto 8000(se puede cambiar en caso de que tengan el puerto ocupado)
 al realizar una solicitud de tipo GET al endpoint este a su vez ejecuta el llamado a la APIREST externa  https://rapidapi.com/apilayernet/api/rest-countries-v1  desde la cual esta misma cuenta con un endpoint el cual es :
 >https://restcountries-v1.p.rapidapi.com/all
