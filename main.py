@@ -10,16 +10,10 @@ import os
 import hashlib
 
 
-
-
-
-
 # Defining a HTTP request Handler class
 class ServiceHandler(http.server.SimpleHTTPRequestHandler):
-
 	# GET Method Defination
 	def do_GET(self):
-		
 		if self.path == "/":
 			# defining all the headers
 			self.send_response(200)
@@ -33,21 +27,17 @@ class ServiceHandler(http.server.SimpleHTTPRequestHandler):
 				'x-rapidapi-key': "921cfc17abmsh42834139575656fp12725cjsn8ce3ad10333d",
 				'x-rapidapi-host': "restcountries-v1.p.rapidapi.com"
 				}
-
-
-
 			regions_data = []
 			hash_languages =[]
 			countries = []
 			times=[]
-
 
 			data  = json.loads(requests.request("GET", url, headers=headers).text)
 
 			for information in data:
 				if information["region"]  and not information["region"]  in regions_data:
 					regions_data.append(information["region"])
-			# only the different existing regions
+					# only the different existing regions
 			
 
 			for region in regions_data:
@@ -109,8 +99,8 @@ class ServiceHandler(http.server.SimpleHTTPRequestHandler):
 		rel_path_db = "instance/zinobe_challenge.sqlite"
 		abs_file_path_db = os.path.join(script_dir_db, rel_path_db)
 		try:
-			sqliteConnection = sqlite3.connect(abs_file_path_db)
-			cursor = sqliteConnection.cursor()
+			connection = sqlite3.connect(abs_file_path_db)
+			cursor = connection.cursor()
 			print("Successfully Connected to SQLite")
 			cursor.executescript(init_query)
 			print("FINISHED")
@@ -119,12 +109,10 @@ class ServiceHandler(http.server.SimpleHTTPRequestHandler):
 		except sqlite3.Error as error:
 			print("Error while connecting to sqlite", error)
 		finally:
-			if (sqliteConnection):
-				sqliteConnection.close()
+			if (connection):
+				connection.close()
 				print("The SQLite connection is closed")
-			# We can also close the connection if we are done with it.
-			# Just be sure any changes have been committed or they will be lost.
-			# Server Initialization
+
 
 class ReuseAddrTCPServer(socketserver.TCPServer):
     allow_reuse_address = True
