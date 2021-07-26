@@ -37,4 +37,5 @@ pero en un archivo JSON
 si desea tambien puede realizar la solicitud GET desde la linea de comandos 
 > curl http://127.0.0.1:8000/
 
-
+# FUNCIONAMIENTO
+![alt text](https://github.com/sebas1017/Challenge-Python-L1/blob/main/APIREST.PNG?raw=true)
