@@ -20,8 +20,8 @@ class ServiceHandler(http.server.SimpleHTTPRequestHandler):
 			self.send_header('Content-type','text/json')
 			self.end_headers()
 
-			url = "https://restcountries-v1.p.rapidapi.com/all"
-			url_countries_by_region = "https://restcountries.eu/rest/v2/region/{region}"
+			url = "https://restcountries.com/v3.1/all"
+			url_countries_by_region = "https://restcountries.com/v3.1/region/{region}"
 
 			headers = {
 				'x-rapidapi-key': "921cfc17abmsh42834139575656fp12725cjsn8ce3ad10333d",
@@ -31,24 +31,24 @@ class ServiceHandler(http.server.SimpleHTTPRequestHandler):
 			hash_languages =[]
 			countries = []
 			times=[]
-
 			data  = json.loads(requests.request("GET", url, headers=headers).text)
-
 			for information in data:
 				if information["region"]  and not information["region"]  in regions_data:
 					regions_data.append(information["region"])
 					# only the different existing regions
-			
+
 
 			for region in regions_data:
 				start_time = time.time()
+				time.sleep(3)
 				response_by_region = json.loads(
 					requests.request("GET", url_countries_by_region.format(region=region), headers=headers).text
 				)
 				# we consult the data requested by region
 				country_option = random.randint(0,len(response_by_region)-1)
-				countries.append(response_by_region[country_option]['name'])
-				hash_languages.append(hashlib.sha1(response_by_region[country_option]['languages'][0]['name'].encode()).hexdigest())
+				countries.append(response_by_region[country_option]['name']['common'])
+				key_language =  list(response_by_region[country_option]['languages'].keys())[0]
+				hash_languages.append(hashlib.sha1(response_by_region[country_option]['languages'][str(key_language)].encode()).hexdigest())
 				end_time = time.time()
 				times.append(round((end_time-start_time)*1000,2))
 
