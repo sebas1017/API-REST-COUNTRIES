@@ -48,6 +48,8 @@ class ServiceHandler(http.server.SimpleHTTPRequestHandler):
 				# we consult the data requested by region
 				country_option = random.randint(0,len(response_by_region)-1)
 				countries.append(response_by_region[country_option]['name']['common'])
+				print("POR AQUIII")
+				print(response_by_region[country_option])
 				key_language =  list(response_by_region[country_option]['languages'].keys())[0]
 				hash_languages.append(hashlib.sha1(response_by_region[country_option]['languages'][str(key_language)].encode()).hexdigest())
 				end_time = time.time()
