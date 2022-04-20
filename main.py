@@ -41,15 +41,13 @@ class ServiceHandler(http.server.SimpleHTTPRequestHandler):
 
 			for region in regions_data:
 				start_time = time.time()
-				time.sleep(3)
+				time.sleep(1)
 				response_by_region = json.loads(
 					requests.request("GET", url_countries_by_region.format(region=region), headers=headers).text
 				)
 				# we consult the data requested by region
 				country_option = random.randint(0,len(response_by_region)-1)
 				countries.append(response_by_region[country_option]['name']['common'])
-				print("POR AQUIII")
-				print(response_by_region[country_option])
 				key_language =  list(response_by_region[country_option]['languages'].keys())[0]
 				hash_languages.append(hashlib.sha1(response_by_region[country_option]['languages'][str(key_language)].encode()).hexdigest())
 				end_time = time.time()
@@ -121,8 +119,6 @@ class ReuseAddrTCPServer(socketserver.TCPServer):
     allow_reuse_address = True
 
 PORT = int(os.environ.get('PORT', 8000))
-print("ESTE ES EL TIPO")
-print(type(PORT))
 myserver = ReuseAddrTCPServer(("",PORT),ServiceHandler)
 myserver.daemon_threads = True
 print(f"Server Started at http://127.0.0.1:{PORT}/" )
