@@ -119,6 +119,8 @@ class ReuseAddrTCPServer(socketserver.TCPServer):
     allow_reuse_address = True
 
 PORT = os.environ.get('PORT', 8000)
+print("ESTE ES EL TIPO")
+print(type(PORT))
 myserver = ReuseAddrTCPServer(("",PORT),ServiceHandler)
 myserver.daemon_threads = True
 print(f"Server Started at http://127.0.0.1:{PORT}/" )
