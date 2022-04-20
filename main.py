@@ -118,7 +118,7 @@ class ServiceHandler(http.server.SimpleHTTPRequestHandler):
 class ReuseAddrTCPServer(socketserver.TCPServer):
     allow_reuse_address = True
 
-PORT = os.environ.get('PORT', 8000)
+PORT = int(os.environ.get('PORT', 8000))
 print("ESTE ES EL TIPO")
 print(type(PORT))
 myserver = ReuseAddrTCPServer(("",PORT),ServiceHandler)
