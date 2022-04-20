@@ -8,6 +8,7 @@ import time
 import random
 import os
 import hashlib
+import os
 
 
 # Defining a HTTP request Handler class
@@ -117,7 +118,7 @@ class ServiceHandler(http.server.SimpleHTTPRequestHandler):
 class ReuseAddrTCPServer(socketserver.TCPServer):
     allow_reuse_address = True
 
-PORT=8000
+PORT = os.environ.get('PORT', 8000)
 myserver = ReuseAddrTCPServer(("",PORT),ServiceHandler)
 myserver.daemon_threads = True
 print(f"Server Started at http://127.0.0.1:{PORT}/" )
